@@ -1,0 +1,28 @@
+body {
+    margin: 0%;
+}
+
+#topBar {
+  position: absolute;
+  width: 100%;
+  height: 6%;
+  top: 0%;
+  left: 50%;
+  background-color: rgb(17, 17, 17);
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+#topBar:hover {
+  height: 6.5%;
+  width: 100%;
+}
+
+#titleName {
+    color: white;
+    font-family: 'Segoe UI',sans-serif;
+    position:sticky;
+    height: 100%;
+    width: 15%;
+    margin: 1%;
+}
