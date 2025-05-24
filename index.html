@@ -2,19 +2,37 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="styles/page.css">
+        <link rel="stylesheet" href="styles/global.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <title>Reality</title>
     </head>
     <body>
-        <div id = "leftBar">
-            <h2 id = "titleName">Reality</h2>
-        </div>
-        <ul id = "leftBarList">
-            <li id = "leftBarListItem">
-                <button class=""></button>
-            </li>
-        </ul>
+        <div id = "sideBar">
+            <div id = "mainPageData">
+                <p id = "titleName">Reality - V1</p>
+            </div>
 
+            <div class="lineBreak"></div>
+
+            <div id = "mainPageControls">
+                <div id = "mainButtonControlHolder">
+                    <button class="mainControlButton"></button>
+                    <button class="mainControlButton"></button>
+                    <button class="mainControlButton"></button>
+                    <button class="mainControlButton"></button>
+                </div>
+                <button id="newTabButton">
+                    <img id = "newTabIcon" src="Images/PlusIcon.png">
+                    <p id = "newTabText">New tab</p>
+                </button>
+            </div>
+
+             <div class="lineBreak"></div>
+
+            <ul id = "sideBarTabList">
+            </ul>
+        </div>
         <script src="jsScripts/main.js"></script>
     </body>
 </html>
