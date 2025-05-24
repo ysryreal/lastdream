@@ -52,32 +52,31 @@ body {
 #newTabButton {
   width: 90%;
   height: 45%;
-  border-radius: 10px;
+  border-radius: 6px;
   display: flex;
   justify-self: center;
   align-items: center;
+  text-align: center;
   border-style: none;
   background-color: rgb(43, 43, 43);
   transition: 0.2s;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 2%;
   gap: 10px;
+  opacity: 1;
 }
 
-#newTabButton:hover {
-  background-color: rgb(53, 53, 53);
-  transform: translate(0,-3px);
-}
 
 #newTabIcon {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 #newTabText {
   font-weight: 400;
   font-size: 1.5em;
   text-align: center;
+  align-content: center;
   color: white;
 }
 
@@ -85,6 +84,13 @@ body {
   height: 48%;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-bottom: 2%;
+  gap: 4%;
+}
+
+#sideBarTabList {
+  margin: 0%;
+  margin-top: 9%;
+  height: 80%;
 }

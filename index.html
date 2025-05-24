@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
     <head>
         <link rel="stylesheet" href="styles/page.css">
         <link rel="stylesheet" href="styles/global.css">
@@ -17,22 +16,25 @@
 
             <div id = "mainPageControls">
                 <div id = "mainButtonControlHolder">
-                    <button class="mainControlButton"></button>
-                    <button class="mainControlButton"></button>
-                    <button class="mainControlButton"></button>
-                    <button class="mainControlButton"></button>
+                    <button class="mainControlButton liftEffect brightEffect" id = "backPage"></button>
+                    <button class="mainControlButton liftEffect brightEffect" id = "forwardPage"></button>
+                    <button class="mainControlButton liftEffect brightEffect" id = "refreshPage"></button>
+                    <button class="mainControlButton liftEffect brightEffect" id = "settingsPage"></button>
                 </div>
-                <button id="newTabButton">
-                    <img id = "newTabIcon" src="Images/PlusIcon.png">
-                    <p id = "newTabText">New tab</p>
+                <div class="lineBreak"></div>
+                <button class ="liftEffect brightEffect tabButton" id="newTabButton">
+                    <div class = "tabHolder">
+                        <img id = "newTabIcon" src="Images/PlusIcon.png">
+                        <p id = "newTabText">Create new tab</p>
+                    </div>
                 </button>
             </div>
 
-             <div class="lineBreak"></div>
-
-            <ul id = "sideBarTabList">
-            </ul>
+            <div id = "sideBarTabList">
+            </div>
         </div>
-        <script src="jsScripts/main.js"></script>
+        <script src="jsScripts/main.js" type = "module"></script>
+        <script src = "jsScripts/effects.js" type = "module"></script>
+        <script src="jsScripts/tabsHandler.js" type = "module"></script>
     </body>
 </html>
