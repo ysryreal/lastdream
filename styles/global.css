@@ -56,10 +56,12 @@ p {
 }
 
 .tabText {
-    font-weight: 400;
+    font-weight: 500;
   font-size: 1.5em;
   text-align: center;
   align-content: center;
+    position: relative;
+  top: -10%;
   color: white;
 }
 
@@ -86,4 +88,7 @@ p {
   font-weight: 900;
   height: 100%;
   width: 100%;
+  position: relative;
+  top: 3%;
+  left: -8%;
 }

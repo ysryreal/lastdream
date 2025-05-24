@@ -4,11 +4,6 @@ const maxTabs = 10
 let currentTabs = 0
 let yMult = 4
 
-export function setTabURL(newURL)
-{
-
-}
-
 export function closeTab(tabId)
 {   
     console.log(tabId)
@@ -38,6 +33,7 @@ export function createNewTab(URL)
         const newTabIconElement = document.createElement("img")
 
         let deleting = false;
+        let savedURL = "https://google.com"
 
         newTabElement.classList = "tabButton liftEffect brightEffect";
         newTabElement.id = `${currentTabs}`
@@ -67,10 +63,27 @@ export function createNewTab(URL)
 
         newTabCloseElement.addEventListener("click", () => {
 
+            
             if (deleting == false)
             {
-                closeTab(parseInt(newTabElement.id))
-                deleting = true
+                if (currentTabs > 1)
+                {
+                    deleting = true
+                    closeTab(parseInt(newTabElement.id))
+                }
+                else
+                {
+                    alert("You have to have 1 tab open!")
+                }
+            }
+
+        })
+
+        newTabElement.addEventListener("click", () => {
+
+            if (deleting == false)
+            {
+                
             }
         })
 
