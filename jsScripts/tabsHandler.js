@@ -1,8 +1,14 @@
 const sideBarTabList = document.getElementById("sideBarTabList")
+const urlSearcher = document.getElementById("topSearchBarForm")
+const urlSearcherQuery = document.getElementById("topSearchBarInput")
+const IFrame = document.getElementById("mainIframe")
+
+const google = 'https://www.google.com/search?q=';
 
 const maxTabs = 10
 let currentTabs = 0
 let yMult = 4
+let selectedId = 1
 
 export function closeTab(tabId)
 {   
@@ -11,7 +17,7 @@ export function closeTab(tabId)
 
     if (tabToClose == undefined) {return}
 
-    currentTabs--
+    currentTabs = document.getElementsByClassName("tabButton").length 
 
     tabToClose.style.opacity = 0
 
@@ -33,14 +39,14 @@ export function createNewTab(URL)
         const newTabIconElement = document.createElement("img")
 
         let deleting = false;
-        let savedURL = "https://google.com"
+        let savedURL = "https://daydreamx.pro"
 
         newTabElement.classList = "tabButton liftEffect brightEffect";
         newTabElement.id = `${currentTabs}`
         newTabElement.style.top = `${(currentTabs * yMult) + 1}%`;
         
         newTabTextElement.classList = "tabText";
-        newTabTextElement.textContent = `I New tab`;
+        newTabTextElement.textContent = `New tab`;
 
         newTabIconElement.classList = "tabIcon";
         newTabIconElement.src = "https://google.com/favicon.ico";
@@ -55,7 +61,7 @@ export function createNewTab(URL)
         newTabCloseElement.classList = "tabClose"
         newTabCloseElement.appendChild(newTabCloseTextElement)
 
-        currentTabs++   
+        currentTabs = document.getElementsByClassName("tabButton").length 
         
         setTimeout( () => {
             newTabElement.style.opacity = "1"
@@ -83,9 +89,22 @@ export function createNewTab(URL)
 
             if (deleting == false)
             {
-                
+                selectedId = parseInt(newTabElement.id)
+                IFrame.src = savedURL
             }
         })
+
+        urlSearcher.addEventListener('submit', () => {
+            const currentTab = document.getElementsByClassName("tabButton")[selectedId]
+
+            if (selectedId == parseInt(newTabElement.id))
+            {   
+                const q = urlSearcherQuery.value
+                savedURL = google + encodeURIComponent(q);
+                
+                IFrame.src = savedURL
+            }
+        });
 
         newTabElement.appendChild(newTabTxtInElement)
         newTabElement.appendChild(newTabCloseElement)

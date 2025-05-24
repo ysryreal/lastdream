@@ -18,6 +18,8 @@ p {
   border-color: rgb(56, 56, 56);
   border-radius: 6px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -73,7 +75,7 @@ p {
 .tabClose {
   height: 20px;
   width: 20px;
-  background-color: red;
+  background-color: rgb(8, 8, 8);
   border-style: none;
   border-radius: 3px;
   transition: 0.3s;

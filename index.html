@@ -14,28 +14,25 @@
 
             <div class="lineBreak"></div>
 
-            <div id = "mainPageControls">
+            
                 <div id = "mainButtonControlHolder">
                     <button class="mainControlButton liftEffect brightEffect" id = "backPage"></button>
                     <button class="mainControlButton liftEffect brightEffect" id = "forwardPage"></button>
                     <button class="mainControlButton liftEffect brightEffect" id = "refreshPage"></button>
                     <button class="mainControlButton liftEffect brightEffect" id = "settingsPage"></button>
+                    <button class="mainControlButton liftEffect brightEffect" id = "newTabButton"><img id = "newTabIcon" src="Images/PlusIcon.png"></button>
                 </div>
-                <input class = "brightEffect" id = "topSearchBarForm" type = "text" placeholder="Search a url here..." autocorrect="off" autocomplete="off" spellcheck="false">
+                <form id = "topSearchBarForm">
+                    <input class = "brightEffect" id = "topSearchBarInput" type = "text" placeholder="Search a url here..." autocorrect="off" autocomplete="off" spellcheck="false">
+                </form>
                 <div class="lineBreak"></div>
-                <button class ="liftEffect brightEffect tabButton" id="newTabButton">
-                    <div class = "tabHolder">
-                        <img id = "newTabIcon" src="Images/PlusIcon.png">
-                        <p id = "newTabText">Create new tab</p>
-                    </div>
-                </button>
-            </div>
+            
 
-            <div id = "sideBarTabList">
+                <div id = "sideBarTabList"></div>
             </div>
         </div>
         <div id = "mainPage">
-            <iframe id = "mainIframe" src="https://google.com"></iframe>
+            <iframe id = "mainIframe" src="https://daydreamx.pro"></iframe>
         </div>
 
         <script src="jsScripts/main.js" type = "module"></script>
