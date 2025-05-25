@@ -4,16 +4,45 @@ const mainforwardButton = document.getElementById("forwardPage")
 const mainRefreshButton = document.getElementById("refreshPage")
 const mainSettingsButton = document.getElementById("settingsPage")
 const newTabButton = document.getElementById("newTabButton")
-const urlInput = document.getElementById("topSearchBarForm")
+const urlInputForm = document.getElementById("topSearchBarForm")
+const urlInput = document.getElementById("topSearchBarInput")
 
-import { createTab } from "./tabsHandler.js"
-import { goToLink } from "./prxy.cjs"
+import { goToLink, generateLink } from "./prxy.js"
 
-console.log(" - Javascript has been activated! - setting up main functions!")
-createTab("https://github.com")
+goToLink("https://discord.com")
 
-newTabButton.addEventListener("click", () => {
-    createTab("https://github.com")
+mainbackButton.addEventListener("click", () => {
+    let nextTab = getUrlById(getId() - 1)
+
+    console.log(nextTab)
+
+    if (nextTab !== undefined)
+    {
+        setId(getId() - 1)
+        goToLink(nextTab)
+    }
 })
 
-goToLink("https://google.com")
+mainforwardButton.addEventListener("click", () => {
+    let nextTab = getUrlById(getId() + 1)
+
+    if (nextTab !== undefined)
+    {   
+        setId(getId() + 1)
+        goToLink(nextTab)
+    }
+})
+
+mainRefreshButton.addEventListener("click", () => {
+    goToLink(getUrlById(getId()))
+})
+
+urlInputForm.addEventListener("submit", function(event)
+{
+    event.preventDefault()
+
+    generateLink(urlInput.value)
+
+    goToLink(urlInput.value)
+    pushNewLink(urlInput.value)
+})

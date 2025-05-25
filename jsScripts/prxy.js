@@ -1,17 +1,17 @@
-const http = require("http")     
-const https = require('https');     
-const { URL } = require('url');     
+const mainIframe = document.getElementsByClassName("mainIframe")[0]
 
-const PORT = 8080;
+import { encode } from "./codec";
 
 export function goToLink(targetUrl)
-{
-    const encodedUrl = encodeURIComponent(targetUrl)
-    
-    let savedData = ``
+{   
+    if (!targetUrl.startsWith("http://") && !targetUrl.startsWith("https://")) {
+        targetUrl = "https://" + url;
+    }
 
-    http.get(encodedUrl, (data) => {
-        savedData += data
-        console.log(savedData)
-    })
+    const newUrl = encode(targetUrl)
+
+    const proxiedPath = __uv$config.prefix + newUrl;
+    const fullUrl = location.origin + proxiedPath;
+
+    mainIframe.src = fullUrl
 }
