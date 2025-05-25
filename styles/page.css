@@ -95,18 +95,19 @@ body {
 }
 
 #topSearchBarInput {
-  width: 100%;
+  width: 96%;
   height: 100%;
   display: flex;
-  justify-self: center;
+  position: relative;
+  left: 3%;
   align-items: center;
-  text-align: center;
+  text-align: start;
   border-radius: 6px;
   border-style: none;
   color: white;
   font-weight: 500;
   font-size: 1em;
   outline: none;
-  background-color: rgb(43, 43, 43);
+  background-color: rgba(43, 43, 43, 0);
   transition: 0.5s;
 }

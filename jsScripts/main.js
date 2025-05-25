@@ -6,12 +6,14 @@ const mainSettingsButton = document.getElementById("settingsPage")
 const newTabButton = document.getElementById("newTabButton")
 const urlInput = document.getElementById("topSearchBarForm")
 
-import { createNewTab } from "./tabsHandler.js"
+import { createTab } from "./tabsHandler.js"
+import { goToLink } from "./prxy.cjs"
 
 console.log(" - Javascript has been activated! - setting up main functions!")
-createNewTab("google.com")
+createTab("https://github.com")
 
 newTabButton.addEventListener("click", () => {
-    createNewTab("google.com")
+    createTab("https://github.com")
 })
 
+goToLink("https://google.com")

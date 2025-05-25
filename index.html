@@ -9,7 +9,7 @@
     <body>
         <div id = "sideBar">
             <div id = "mainPageData">
-                <p id = "titleName">Reality - V1</p>
+                <p class = "brightText" id = "titleName">Reality - V1</p>
             </div>
 
             <div class="lineBreak"></div>
@@ -22,8 +22,8 @@
                     <button class="mainControlButton liftEffect brightEffect" id = "settingsPage"></button>
                     <button class="mainControlButton liftEffect brightEffect" id = "newTabButton"><img id = "newTabIcon" src="Images/PlusIcon.png"></button>
                 </div>
-                <form id = "topSearchBarForm">
-                    <input class = "brightEffect" id = "topSearchBarInput" type = "text" placeholder="Search a url here..." autocorrect="off" autocomplete="off" spellcheck="false">
+                <form class = "brightEffect" id = "topSearchBarForm">
+                    <input id = "topSearchBarInput" type = "text" placeholder="Search a url here..." autocorrect="off" autocomplete="off" spellcheck="false">
                 </form>
                 <div class="lineBreak"></div>
             
@@ -31,7 +31,9 @@
                 <div id = "sideBarTabList"></div>
             </div>
         </div>
-        <div id = "mainPage">
+            <div id = "mainPage">
+                <iframe class = "mainIframe"></iframe>
+            </div>
         </div>
 
         <script src="jsScripts/main.js" type = "module"></script>
