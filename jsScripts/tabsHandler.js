@@ -1,7 +1,7 @@
 const sideBarTabList = document.getElementById("sideBarTabList")
 const urlSearcher = document.getElementById("topSearchBarForm")
 const urlSearcherQuery = document.getElementById("topSearchBarInput")
-const IFrame = document.getElementById("mainIframe")
+const mainPage = document.getElementById("mainPage")
 
 const google = 'https://www.google.com/search?q=';
 
@@ -37,9 +37,10 @@ export function createNewTab(URL)
         const newTabCloseTextElement = document.createElement("p")
         const newTabTextElement = document.createElement("p")
         const newTabIconElement = document.createElement("img")
+        const newTabIFrameElement = document.createElement("iframe")
 
         let deleting = false;
-        let savedURL = "https://daydreamx.pro"
+        let savedURL = "https://gooogle.com"
 
         newTabElement.classList = "tabButton liftEffect brightEffect";
         newTabElement.id = `${currentTabs}`
@@ -57,6 +58,10 @@ export function createNewTab(URL)
 
         newTabCloseTextElement.textContent = "X"
         newTabCloseTextElement.classList = "tabCloseText"
+
+        newTabIFrameElement.classList = "mainIframe"
+        newTabIFrameElement.src = savedURL
+        mainPage.appendChild(newTabIFrameElement)
 
         newTabCloseElement.classList = "tabClose"
         newTabCloseElement.appendChild(newTabCloseTextElement)
@@ -90,7 +95,8 @@ export function createNewTab(URL)
             if (deleting == false)
             {
                 selectedId = parseInt(newTabElement.id)
-                IFrame.src = savedURL
+                newTabIFrameElement.style.opacity = "1"
+                newTabIFrameElement.style.zIndex = "99999"
             }
         })
 
@@ -100,9 +106,19 @@ export function createNewTab(URL)
             if (selectedId == parseInt(newTabElement.id))
             {   
                 const q = urlSearcherQuery.value
-                savedURL = google + encodeURIComponent(q);
+                savedURL = q;
                 
-                IFrame.src = savedURL
+                console.log(savedURL)
+
+                newTabIconElement = savedURL + "/favicon.ico"
+                newTabIFrameElement.style.opacity = "1"
+                newTabIFrameElement.style.zIndex = "99999"
+                newTabIFrameElement.src = savedURL
+            }
+            else
+            {
+                newTabIFrameElement.style.opacity = "0"
+                newTabIFrameElement.style.zIndex = "5"
             }
         });
 

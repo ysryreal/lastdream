@@ -110,16 +110,3 @@ body {
   background-color: rgb(43, 43, 43);
   transition: 0.5s;
 }
-
-#mainIframe {
-  width: 98%;
-  height: 95%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background-color: white;
-  border-radius: 20px;
-  border-style: none;
-  transform: translate(-50%,-50%);
-  transition: 0.5s;
-}
