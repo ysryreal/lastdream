@@ -1,6 +1,6 @@
 const mainIframe = document.getElementsByClassName("mainIframe")[0]
 
-import { encode } from "./codec";
+import { encode } from "./codec.js";
 
 export function goToLink(targetUrl)
 {   
