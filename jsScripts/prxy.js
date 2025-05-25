@@ -5,7 +5,7 @@ import { encode } from "./codec.js";
 export function goToLink(targetUrl)
 {   
     if (!targetUrl.startsWith("http://") && !targetUrl.startsWith("https://")) {
-        targetUrl = "https://" + url;
+        targetUrl = "https://" + targetUrl;
     }
 
     const newUrl = encode(targetUrl)
